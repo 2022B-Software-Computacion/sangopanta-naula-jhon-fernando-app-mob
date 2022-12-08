@@ -1,4 +1,5 @@
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 fun main(){
@@ -32,21 +33,21 @@ fun main(){
     if (true){
     }else{}
 
-    val estadoCivil = "s"
-    when(estadoCivil){
-        ("S") -> {
+    val estadoCivi = 's'
+    when(estadoCivi){
+        ('S') -> {
             print("Acercarse")
         }
-        ("C") -> {
+        ('C') -> {
             print("Alejarse")
         }
-        ("UN") -> {
+        ('N') -> {
             print("Hablar")
         }
-        else -> print("No reconocido")
+        else -> println("No reconocido")
     }
 
-    val  coqueteo = if(estadoCivil == "S") "SI" else "NO"
+    val  coqueteo = if(estadoCivil == 'S') "SI" else "NO"
 
 
     println(sum(3,4))
@@ -68,8 +69,69 @@ fun calcularSueldo(sueldo: Double,
     }else{
         return sueldo*(100/tasa) + bonoEspecial
     }
+
+
+    /*  CLASES */
+
+
 }
-fun sum(numer1: Int, number2: Int) : Int {
-    return numer1 + number2;
+abstract class NumerosJava{
+    protected val numeroUno: Int
+    private val numeroDos: Int
+
+    constructor(uno : Int, dos: Int){
+        this.numeroUno = uno
+        this.numeroDos = dos
+        print(("Inicializando"))
+    }
 }
+
+abstract class Numeros ( //m Constructor Primario
+   // uno: Int, // Parametro
+    protected val numeroUno: Int, //Public es opcional
+    protected val numeroDos: Int
+        ){
+
+   // protected  val numeroUno: Int
+     //var cedula: String = ""
+    init { // Bloque de codigo del constructor primario // La palabra public en Kotlin es opcional
+       this.numeroUno// this es opcional, pero existe dentro de la clase
+        this.numeroDos
+        print("Inicializando")
+    }
+}
+
+class Suma(
+    uno: Int,
+    dos: Int,
+): Numeros(uno, dos){
+   init {
+       this.numeroUno,
+       this.numeroDos
+   }
+    constructor(uno: Int?, dos: Int):this(
+        if(uno == null) 0 else uno
+        dos
+    )
+    constructor(uno: Int?, dos: Int?):this(
+        if(uno == null) 0 else uno
+                dos
+    )
+
+    public fun sumar():Int{ //No es necesario colocar el modificador de0 acceso public
+        return this.numeroUno + numeroDos
+    }
+    companion object  { //Atributos y metodos compartidos entre las instancias
+        val phi = 3.1416
+
+        fun elevarAlCuadrado(num:Int): Int{
+            return num*num
+        }
+        val historialSumas = ArrayList<Int>()
+        fun agregarHistorial(valorNuevaSuma: Int){
+            historialSumas.add(valorNuevaSuma)
+        }
+     }
+}
+
 main()
