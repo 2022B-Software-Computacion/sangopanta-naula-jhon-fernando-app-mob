@@ -51,6 +51,12 @@ fun main(){
 
 
     println(sum(3,4))
+
+    val sumaUno = Suma(3,4)
+    val sumaDos = Suma(5,8)
+    sumaUno.sumar()
+    sumaDos.sumar()
+    Suma.agregarHistorial(Suma.historialSumas)
 }
 
 fun imprimirNombre(nombre: String): Unit{
@@ -133,5 +139,30 @@ class Suma(
         }
      }
 }
+
+
+    //ARREGLOS
+
+    //Tipos de arreglos
+
+
+//Arreglo estatico
+val arregloEstatico:  Array<Int> = arrayOf<Int>(1,2,3)
+println(arregloEstatico)
+
+    //Arreglos dinamicos
+val arregloDinamico: ArrayList<Int> = arrayListOf<Int>(1,2,3,4,5,6,7,8,9,10)
+println(arregloDinamico)
+arregloDinamico.add(11)
+arregloDinamico.add(12)
+println(arregloDinamico)
+
+// Operadores -> Sirven para los arreglos estáticos y dinámicos
+
+//For Each -> Unit
+//Iterar un arreglo
+
+
+
 
 main()
