@@ -1,5 +1,6 @@
 package com.example.plugins
 
+
 import com.example.controller.PostsController
 import io.ktor.http.*
 import io.ktor.server.application.*
@@ -9,7 +10,7 @@ import io.ktor.server.routing.*
 fun Application.configureRouting() {
 
 
-    val post: PostsController = PostsController()
+    val post = PostsController()
 
     routing {
         get("/") {

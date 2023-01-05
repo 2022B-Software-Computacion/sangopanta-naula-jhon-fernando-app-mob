@@ -1,6 +1,6 @@
-package com.example.controlador
+package com.example.controller
 
-import com.example.entidades.User
+import com.example.entities.User
 import com.example.file.ManagementFiles
 
 
