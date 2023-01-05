@@ -1,11 +1,12 @@
-package com.example.controller
+package com.example.controlador
 
-import com.example.entities.Post
-import com.example.files.ManagementFiles
+import com.example.entidades.Post
+import com.example.file.ManagementFiles
 
 
 class PostsController : AbstractController<Post, Int> {
-    private val files: ManagementFiles = ManagementFiles()
+
+    val files = ManagementFiles()
 
     override fun delete(id: Int, path: String) {
         val toEliminated = this.getById(id)
@@ -43,8 +44,7 @@ class PostsController : AbstractController<Post, Int> {
     // Returns a Post by its ID
     override fun getById(id: Int): Post? {
         val all = this.read()
-        val post = all.find { it -> it.idPost == id }
-        return post
+        return all.find { it -> it.idPost == id }
     }
 
     // Returns posts from a User specific

@@ -1,12 +1,12 @@
-package com.example.controller
+package com.example.controlador
 
-import com.example.entities.User
-import com.example.files.ManagementFiles
+import com.example.entidades.User
+import com.example.file.ManagementFiles
 
 
 class UserController : AbstractController<User, Int> {
-    val files: ManagementFiles = ManagementFiles()
-    val posts: PostsController = PostsController()
+    val files = ManagementFiles()
+    val posts= PostsController()
 
     override fun delete(id: Int, path: String) {
         val toEliminated = this.getById(id)
@@ -54,7 +54,7 @@ class UserController : AbstractController<User, Int> {
 
     override fun getById(id: Int): User? {
         val all = this.read()
-        val user = all.find { it -> it.idUser == id }
+        val user = all.find { it.idUser == id }
         return user
     }
 
