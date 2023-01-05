@@ -1,0 +1,1 @@
+rootProject.name = "com.example.examen-sangopanta-app-mobiles"
