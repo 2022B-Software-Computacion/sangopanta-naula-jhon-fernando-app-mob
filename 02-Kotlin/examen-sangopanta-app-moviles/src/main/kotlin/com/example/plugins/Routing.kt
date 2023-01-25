@@ -1,27 +1,22 @@
 package com.example.plugins
 
 
-import com.example.controlador.PostsController
-import com.example.controlador.UserController
+import com.example.crud.PostsCRUD
+import com.example.crud.UserCRUD
 import com.example.entidades.Post
 import com.example.entidades.User
 import io.ktor.http.*
-import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
-import io.ktor.server.application.ApplicationCallPipeline.ApplicationPhase.Plugins
-import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.response.*
 import io.ktor.server.request.*
 import io.ktor.server.routing.*
-import io.ktor.server.plugins.cors.*
-import java.time.Duration
 
 
 fun Application.configureRouting() {
 
 
-    val post = PostsController()
-    val user = UserController()
+    val post = PostsCRUD()
+    val user = UserCRUD()
 
     install(io.ktor.server.plugins.cors.routing.CORS){
         anyHost()
@@ -35,13 +30,6 @@ fun Application.configureRouting() {
     }
 
     routing {
-
-    
-
-        get("/") {
-            call.respondText("Hello World!")
-        }
-
         get("/listarPosts") {
             call.respond(post.read())
         }
@@ -121,13 +109,11 @@ fun Application.configureRouting() {
 
         /* Update a User */
         put("/updateUser/{id}"){
-
             val updateUser = call.receive<User>()
             val userId = call.parameters["id"]?.toInt() ?: return@put call.respondText(
                 "User with this id not found",
                 status = HttpStatusCode.NotFound
             )
-
             val updated = user.update(updateUser,userId)
             if(updated){
                 call.respondText("Updated successfully", status = HttpStatusCode.OK)

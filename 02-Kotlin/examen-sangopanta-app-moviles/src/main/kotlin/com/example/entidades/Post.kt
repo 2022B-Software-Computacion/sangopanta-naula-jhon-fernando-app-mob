@@ -8,5 +8,4 @@ data class Post(var idPost: Int, var title: String, var description: String, var
     override fun toString(): String {
         return "${this.idPost},${this.title},${this.description},${this.date},${this.category},${this.idUser}"
     }
-
 }

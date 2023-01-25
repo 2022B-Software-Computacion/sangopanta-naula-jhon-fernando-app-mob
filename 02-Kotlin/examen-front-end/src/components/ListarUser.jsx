@@ -23,6 +23,14 @@ const Users = () => {
     });
 
 
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        const newUser = Object.assign({}, userFront);
+        if (e.target.value) {
+            newUser[name] = value;
+        }
+        setUserFront(newUser);
+    }
 
     const getUsers = async () => {
         try {
@@ -34,6 +42,7 @@ const Users = () => {
             console.log(error)
         }
     }
+
     const deleteUser = async (idUser) => {
         await fetch(`http://localhost:8080/deleteUser/${idUser}`, {
             method: 'DELETE',
@@ -72,14 +81,7 @@ const Users = () => {
         getUsers()
     }
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        const newUser = Object.assign({}, userFront);
-        if (e.target.value) {
-            newUser[name] = value;
-        }
-        setUserFront(newUser);
-    }
+
     
     
 
@@ -96,7 +98,7 @@ const Users = () => {
                     title="Crear"
                     method="POST"
                     handleChange={handleChange}
-                    create={(e) => createUser(userFront)}
+                    create={(e) => createUser(e,userFront)}
                 ></ModalEx>
 
             </div>

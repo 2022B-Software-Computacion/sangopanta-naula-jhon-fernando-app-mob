@@ -1,10 +1,10 @@
-package com.example.controlador
+package com.example.crud
 
 import com.example.entidades.Post
 import com.example.file.ManagementFiles
 
 
-class PostsController : AbstractController<Post, Int> {
+class PostsCRUD : AbstractCRUD<Post, Int> {
 
     private val files = ManagementFiles()
 
@@ -14,17 +14,17 @@ class PostsController : AbstractController<Post, Int> {
         val allPosts = this.read()
         val newPosts = allPosts.filter { it != toEliminated }
         val str = this.arrayToString(newPosts)
-        this.files.writeFile(path, str)
+        this.files.writeFile(path, str,false)
     }
 
     /* Create a new Post */
-    override fun create(Entity: Post, path: String): Boolean {
+    override fun create(entity: Post, path: String): Boolean {
         val flag : Boolean
-        val act = Entity.idPost
+        val act = entity.idPost
         if (verifyId(act)) {
             flag = false
         } else {
-            val str = Entity.toString()
+            val str = entity.toString()
             files.writeFile(path, str)
             flag = true
         }
@@ -32,16 +32,19 @@ class PostsController : AbstractController<Post, Int> {
     }
 
     /* Updates a Post */
-    override fun update(Entity: Post, id: Int):Boolean {
+    override fun update(entity: Post, id: Int):Boolean {
         val toUpdate:Post? = this.getById(id)
+        val idUser = toUpdate?.idUser
         if (toUpdate !== null) {
             this.delete(id,"posts.txt")
-            toUpdate.idUser = Entity.idUser
-            toUpdate.idPost = Entity.idPost
-            toUpdate.category = Entity.category
-            toUpdate.title = Entity.title
-            toUpdate.date= Entity.date
-            toUpdate.description = Entity.description
+            if (idUser != null) {
+                toUpdate.idUser = idUser
+            }
+            toUpdate.idPost = id
+            toUpdate.category = entity.category
+            toUpdate.title = entity.title
+            toUpdate.date= entity.date
+            toUpdate.description = entity.description
             files.writeFile("posts.txt",toUpdate.toString())
             return true
         }

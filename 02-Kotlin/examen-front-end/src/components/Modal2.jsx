@@ -61,7 +61,7 @@ function ModalEx2(props) {
 
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>age</Form.Label>
+              <Form.Label>Date</Form.Label>
               <Form.Control
                 type="text"
                 name="date"
@@ -86,13 +86,26 @@ function ModalEx2(props) {
 
             </Form.Group>
 
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>UserId</Form.Label>
+              <Form.Control
+                type="text"
+                name="UserId"
+                placeholder="userId"
+                defaultValue={props.idUser !== undefined ? props.idUser : ""}
+                onChange={(e) => props.handleChange(e)}
+                autoFocus
+              />
+
+            </Form.Group>
+
           </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={props.titlePage === "Actualizar"?((e) => props.update(e,props.idPost)):((e) => props.create(post))}>
+          <Button variant="primary" onClick={props.titlePage === "Actualizar"?((e) => props.update(e,props.idPost)):((e) => props.create(e,post))}>
             Save Changes
           </Button>
         </Modal.Footer>

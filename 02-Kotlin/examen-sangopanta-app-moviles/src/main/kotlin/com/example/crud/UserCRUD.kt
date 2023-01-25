@@ -1,12 +1,12 @@
-package com.example.controlador
+package com.example.crud
 
 import com.example.entidades.User
 import com.example.file.ManagementFiles
 
 
-class UserController : AbstractController<User, Int> {
+class UserCRUD : AbstractCRUD<User, Int> {
     private val files = ManagementFiles()
-    private val posts= PostsController()
+    private val posts= PostsCRUD()
 
 
     /* Delete a specific user */
@@ -28,13 +28,13 @@ class UserController : AbstractController<User, Int> {
 
     /* Create a new user */
 
-    override fun create(Entity: User, path: String): Boolean {
+    override fun create(entity: User, path: String): Boolean {
         var flag = false
-        val act = Entity.idUser
+        val act = entity.idUser
         if (verifyId(act)) {
             flag = false
         } else {
-            val str = Entity.toString()
+            val str = entity.toString()
             files.writeFile(path, str)
             flag = true
         }

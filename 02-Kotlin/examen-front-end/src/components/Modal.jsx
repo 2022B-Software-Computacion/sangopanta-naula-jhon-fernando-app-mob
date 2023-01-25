@@ -92,7 +92,7 @@ function ModalEx(props) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={props.title === "Actualizar"?((e) => props.update(e,props.idUser)):((e) => props.create(user))}>
+          <Button variant="primary" onClick={props.title === "Actualizar"?((e) => props.update(e,props.idUser)):((e) => props.create(e,user))}>
             Save Changes
           </Button>
         </Modal.Footer>
