@@ -1,16 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 import './App.css'
+import Inicio from './pages/InicioPage'
+import NavBar from './components/NavBar'
+import UserPage from './pages/UserPage'
+import PostPage from './pages/PostPage'
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <BrowserRouter>
+      <NavBar/>
       <Routes>
-        <Route path='/' element={<div className="App">Hola</div>}/>
-        <Route path='/About' element={<div className="App">About</div>}/>
+        <Route path='/' element={<Inicio/>}/>
+        <Route path='/users' element={<UserPage/>}/>
+        <Route path="/posts" element={<PostPage/>}/>
+          {/* Para una pagina no encontrada  */}
       </Routes>
     </BrowserRouter>
 

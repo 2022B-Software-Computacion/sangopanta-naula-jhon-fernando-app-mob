@@ -13,6 +13,20 @@
         android:theme="@style/Theme.02_Android"
         tools:targetApi="31">
         <activity
+            android:name=".GRecyclerView"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ECRUDEntrenador"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".CIntentExplicitoParametros"
             android:exported="false">
             <meta-data

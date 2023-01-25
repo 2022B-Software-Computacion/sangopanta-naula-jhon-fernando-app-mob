@@ -1,2 +1,1 @@
-1,Juan,Perez
-2,Camilo,Sangopanta
+6,Fernando,Sangopanta,14,jhon.sangopanta@epn.edu.ec,[]

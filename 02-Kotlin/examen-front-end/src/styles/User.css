@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container-user{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    min-width: 500px;
+}
+
+.container-general{
+    display: flex;
+    padding: 5px;
+    gap: 5px;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 5px;
+}
+
+.eliminar-user{
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    align-self: auto;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
+
+.eliminar-user:hover{
+    background-color: red;
+}
+
+.eliminar-user:active{
+    background-color: black;
+}

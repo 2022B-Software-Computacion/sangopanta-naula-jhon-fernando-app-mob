@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+ul li {
+    list-style: none;
+    display: inline-block; 
+    margin : 0 10px;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    gap: 40px;
+    margin-top: 20px;
+}
+ul li:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+.nav-link{
+    font-weight: bold;
+    text-decoration: none;
+}

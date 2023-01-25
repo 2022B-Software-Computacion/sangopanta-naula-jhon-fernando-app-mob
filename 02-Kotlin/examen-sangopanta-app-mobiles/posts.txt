@@ -1,5 +1,4 @@
-2,2022-12-09,Este es un segundo post de prueba,1
-3,2022-12-09,Pruebaaa,2
-4,2022-05-04,Agregado desde consola,3
-5,2021-05-02,Probando agregar desde consola,62
-1,2010-1-22,Ingresando un nuevo post,3
+3,tiulo del post,Alguna description,22-12-2021,Noticias,4
+1,tiulo del post,Alguna description,22-12-2021,Noticias,6
+2,tiulo del post,Alguna description,22-12-2021,Noticias,7
+9,tiulo del post,Alguna description,22-12-2021,Noticias,1

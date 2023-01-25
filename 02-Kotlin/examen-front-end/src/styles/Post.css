@@ -1,0 +1,14 @@
+.container-post{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:10px;
+    border:black 1px solid;
+    padding: 5px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
