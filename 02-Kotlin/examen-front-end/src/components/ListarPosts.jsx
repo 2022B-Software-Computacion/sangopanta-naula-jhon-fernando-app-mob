@@ -35,7 +35,6 @@ const ListarPosts = () => {
         } catch {
             console.log("Error al obtener los posts");
         }
-
     };
 
     const createPost = async (e,postNew) => {

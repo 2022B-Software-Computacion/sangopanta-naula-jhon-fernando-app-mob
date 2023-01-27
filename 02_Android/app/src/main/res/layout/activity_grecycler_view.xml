@@ -6,4 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".GRecyclerView">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_entrenadores"
+        android:layout_width="266dp"
+        android:layout_height="462dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_total_likes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lista "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rv_entrenadores"
+        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintStart_toStartOf="@+id/rv_entrenadores"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.102" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:text="Numero total de likes : "
+        app:layout_constraintBottom_toBottomOf="@+id/tv_total_likes"
+        app:layout_constraintEnd_toStartOf="@+id/tv_total_likes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_total_likes"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
