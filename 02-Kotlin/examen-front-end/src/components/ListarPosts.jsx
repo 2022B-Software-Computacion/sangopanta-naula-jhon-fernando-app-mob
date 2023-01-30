@@ -86,7 +86,6 @@ const ListarPosts = () => {
                 method="POST"
                 handleChange={handleChange}
                 createPost={(e) => createPost(e,postFront)}
-
                 >
             </ModalEx2>
             <h1>Lista de Posts</h1>
