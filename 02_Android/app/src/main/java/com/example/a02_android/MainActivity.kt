@@ -56,7 +56,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -92,6 +91,16 @@ class MainActivity : AppCompatActivity() {
             irActividad(GRecyclerView::class.java)
         }
 
+        val botonMaps = findViewById<Button>(R.id.btn_google_maps)
+        botonMaps.setOnClickListener{
+            irActividad(HGoogleMapsActivity::class.java)
+        }
+
+        val botonFirebaseUI = findViewById<Button>(R.id.btn_intent_firebase)
+        botonFirebaseUI
+            .setOnClickListener {
+                irActividad(IFirebaseUIAuth::class.java)
+            }
     }
 
 
