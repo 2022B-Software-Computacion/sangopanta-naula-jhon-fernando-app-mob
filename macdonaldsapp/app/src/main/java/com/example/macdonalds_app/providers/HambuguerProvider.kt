@@ -18,7 +18,11 @@ class HambuguerProvider {
             Hamburguer(1,"Hamburguesa Completa",17.5, R.drawable.img ),
         )
         val hambuguerListPopulares = listOf<Hamburguer>(
-            Hamburguer(1,"Hamburguesa Doble",13.5,R.drawable.img),
-        )
+            Hamburguer(1,"Hamburguesa Doble",13.5,R.drawable.frech_fries),
+            Hamburguer(1,"Hamburguesa Doble",13.5,R.drawable.frech_fries),
+            Hamburguer(1,"Hamburguesa Doble",13.5,R.drawable.frech_fries),
+            Hamburguer(1,"Hamburguesa Doble",13.5,R.drawable.frech_fries),
+
+            )
     }
 }
