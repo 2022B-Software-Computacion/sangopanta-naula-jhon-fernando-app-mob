@@ -29,7 +29,8 @@ class FastFoodFragment : Fragment() {
     private var param2: String? = null
 
     lateinit  var recyclerView :RecyclerView
-    var lista = listOf<Hamburguer>()
+    lateinit var recyclerViewPopulares: RecyclerView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -54,6 +55,12 @@ class FastFoodFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(context,2)
         recyclerView.adapter = ProductAdapter(HambuguerProvider.hambuguerList)
+
+        recyclerViewPopulares = view.findViewById(R.id.recyclerViewPopulares)
+        recyclerViewPopulares.layoutManager = GridLayoutManager(context,2)
+        recyclerViewPopulares.adapter = ProductAdapter(HambuguerProvider.hambuguerListPopulares)
+
+
 
         return view
     }

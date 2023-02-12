@@ -5,14 +5,14 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/product_view"
     android:layout_margin="10dp"
-    card_view:cardBackgroundColor="#2279CD"
+    card_view:cardBackgroundColor="#F9B70F"
     card_view:cardCornerRadius="20dp"
     card_view:cardElevation="6dp"
     card_view:contentPadding="4dp">
 
     <RelativeLayout
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:padding="10dp">
 
         <ImageView
@@ -24,7 +24,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:background="@color/black" />
+             />
 
         <TextView
             android:id="@+id/item_name"
@@ -45,7 +45,6 @@
             android:layout_toEndOf="@id/item_name"
             android:text="$12"
             android:textSize="10dp" />
-
 
     </RelativeLayout>
 
