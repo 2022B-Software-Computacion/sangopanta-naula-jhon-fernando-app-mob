@@ -22,7 +22,13 @@ class HambuguerProvider {
             Hamburguer(1,"Hamburguesa Doble",13.5,R.drawable.frech_fries),
             Hamburguer(1,"Hamburguesa Doble",13.5,R.drawable.frech_fries),
             Hamburguer(1,"Hamburguesa Doble",13.5,R.drawable.frech_fries),
-
             )
+
+        val hambuguerListPostres = listOf<Hamburguer>(
+            Hamburguer(1,"Hamburguesa Doble",13.5,R.drawable.cono_chocolate),
+            Hamburguer(1,"Hamburguesa Doble",13.5,R.drawable.cruhnch),
+            Hamburguer(1,"Hamburguesa Doble",13.5,R.drawable.cruhnch),
+            Hamburguer(1,"Hamburguesa Doble",13.5,R.drawable.cruhnch),
+        )
     }
 }

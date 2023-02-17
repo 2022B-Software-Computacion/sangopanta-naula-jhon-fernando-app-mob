@@ -5,12 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.macdonalds_app.R
 import com.example.macdonalds_app.adapters.ProductAdapter
-import com.example.macdonalds_app.entities.Hamburguer
 import com.example.macdonalds_app.providers.HambuguerProvider
 
 // TODO: Rename parameter arguments, choose names that match
@@ -51,14 +49,23 @@ class FastFoodFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_fast_food, container, false)
 
-
+        // Set Recycler view los mas pedidos with its provider
         recyclerView = view.findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = GridLayoutManager(context,2)
+        recyclerView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         recyclerView.adapter = ProductAdapter(HambuguerProvider.hambuguerList)
 
+        // Set Recycler view Ofertas Irresistibles its provider
         recyclerViewPopulares = view.findViewById(R.id.recyclerViewPopulares)
-        recyclerViewPopulares.layoutManager = GridLayoutManager(context,2)
+        recyclerViewPopulares.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         recyclerViewPopulares.adapter = ProductAdapter(HambuguerProvider.hambuguerListPopulares)
+
+
+        // Set Recycler view Postres with its provider
+        recyclerViewPopulares = view.findViewById(R.id.recyclerViewPostres)
+        recyclerViewPopulares.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        recyclerViewPopulares.adapter = ProductAdapter(HambuguerProvider.hambuguerListPostres)
+
+
 
 
 

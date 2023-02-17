@@ -13,6 +13,7 @@ import com.example.macdonalds_app.providers.HambuguerProvider
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+
 class MainActivity : AppCompatActivity() {
 
 
