@@ -31,26 +31,26 @@
 
         <TextView
             android:id="@+id/item_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
             android:layout_below="@id/item_image"
             android:layout_marginTop="14dp"
             android:text="Hamburguesa"
-            android:textSize="10dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/item_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="$%s"
+            android:textSize="15dp"
             android:layout_below="@id/item_image"
             android:layout_marginStart="16dp"
             android:layout_marginTop="13dp"
-            android:layout_toEndOf="@id/item_name"
-            android:text="$12"
-            android:textSize="10dp" />
+            android:layout_toEndOf="@id/item_name"/>
+
 
     </RelativeLayout>
-
 
 
 

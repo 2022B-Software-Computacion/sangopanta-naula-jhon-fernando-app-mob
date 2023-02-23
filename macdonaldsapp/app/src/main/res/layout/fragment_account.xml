@@ -1,14 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragments.AccountFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="32dp"
+        android:gravity="center_horizontal">
 
-</FrameLayout>
+        <!-- Imagen de perfil -->
+        <ImageView
+            android:id="@+id/profile_image_view"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/perfil" />
+
+        <!-- Nombre de usuario -->
+        <TextView
+            android:id="@+id/username_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Nombre de usuario"
+            android:textSize="20sp" />
+
+        <!-- Contraseña -->
+        <TextView
+            android:id="@+id/password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Contraseña: ***"
+            android:textSize="20sp" />
+
+        <!-- Información de contacto -->
+        <TextView
+            android:id="@+id/contact_info_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="contacto@mcdonalds.com"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <!-- Botón de edición de perfil -->
+    <Button
+        android:id="@+id/edit_profile_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/mcdonalds_yellow"
+        android:text="Editar perfil" />
+
+</LinearLayout>

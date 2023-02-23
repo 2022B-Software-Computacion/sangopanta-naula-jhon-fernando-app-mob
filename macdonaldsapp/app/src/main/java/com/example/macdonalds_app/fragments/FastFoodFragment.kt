@@ -51,7 +51,7 @@ class FastFoodFragment : Fragment() {
 
         // Set Recycler view los mas pedidos with its provider
         recyclerView = view.findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        recyclerView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false) //Set Layaout Manager as Horizontal
         recyclerView.adapter = ProductAdapter(HambuguerProvider.hambuguerList)
 
         // Set Recycler view Ofertas Irresistibles its provider

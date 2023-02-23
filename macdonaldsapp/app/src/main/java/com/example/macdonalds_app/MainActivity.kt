@@ -1,15 +1,10 @@
 package com.example.macdonalds_app
 
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.macdonalds_app.adapters.ProductAdapter
-import com.example.macdonalds_app.entities.Hamburguer
+
 import com.example.macdonalds_app.fragments.*
-import com.example.macdonalds_app.providers.HambuguerProvider
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
 

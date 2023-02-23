@@ -5,7 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.macdonalds_app.R
+import com.example.macdonalds_app.adapters.ItemCartAdapter
+import com.example.macdonalds_app.adapters.ProductAdapter
+import com.example.macdonalds_app.providers.HambuguerProvider
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +27,8 @@ class CartFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    lateinit  var recyclerView : RecyclerView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -34,8 +41,17 @@ class CartFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        val view = inflater.inflate(R.layout.fragment_card, container, false)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_card, container, false)
+        recyclerView = view.findViewById(R.id.cart_list_view)
+        recyclerView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false) //Set Layaout Manager as Vertical
+        recyclerView.adapter = ItemCartAdapter(HambuguerProvider.hambuguerList)
+
+
+        return view
+
+
     }
 
     companion object {
