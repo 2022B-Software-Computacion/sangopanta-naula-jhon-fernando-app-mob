@@ -3,7 +3,7 @@ package com.example.macdonalds_app.providers
 import com.example.macdonalds_app.R
 import com.example.macdonalds_app.entities.Hamburguer
 
-class HambuguerProvider {
+class ProductProvider {
     companion object {
         val hambuguerList = listOf<Hamburguer>(
             Hamburguer(1,"Hamburguesa Doble",13.5,R.drawable.img),
@@ -23,7 +23,6 @@ class HambuguerProvider {
             Hamburguer(1,"Hamburguesa Doble",13.5,R.drawable.frech_fries),
             Hamburguer(1,"Hamburguesa Doble",13.5,R.drawable.frech_fries),
             )
-
         val hambuguerListPostres = listOf<Hamburguer>(
             Hamburguer(1,"Hamburguesa Doble",13.5,R.drawable.cono_chocolate),
             Hamburguer(1,"Hamburguesa Doble",13.5,R.drawable.cruhnch),

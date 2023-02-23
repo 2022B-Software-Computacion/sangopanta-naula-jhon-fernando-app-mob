@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.macdonalds_app.R
 import com.example.macdonalds_app.adapters.ProductAdapter
-import com.example.macdonalds_app.providers.HambuguerProvider
+import com.example.macdonalds_app.providers.ProductProvider
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -52,18 +52,18 @@ class FastFoodFragment : Fragment() {
         // Set Recycler view los mas pedidos with its provider
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false) //Set Layaout Manager as Horizontal
-        recyclerView.adapter = ProductAdapter(HambuguerProvider.hambuguerList)
+        recyclerView.adapter = ProductAdapter(ProductProvider.hambuguerList)
 
         // Set Recycler view Ofertas Irresistibles its provider
         recyclerViewPopulares = view.findViewById(R.id.recyclerViewPopulares)
         recyclerViewPopulares.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        recyclerViewPopulares.adapter = ProductAdapter(HambuguerProvider.hambuguerListPopulares)
+        recyclerViewPopulares.adapter = ProductAdapter(ProductProvider.hambuguerListPopulares)
 
 
         // Set Recycler view Postres with its provider
         recyclerViewPopulares = view.findViewById(R.id.recyclerViewPostres)
         recyclerViewPopulares.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        recyclerViewPopulares.adapter = ProductAdapter(HambuguerProvider.hambuguerListPostres)
+        recyclerViewPopulares.adapter = ProductAdapter(ProductProvider.hambuguerListPostres)
 
 
 

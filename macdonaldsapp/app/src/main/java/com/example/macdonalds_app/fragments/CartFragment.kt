@@ -9,8 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.macdonalds_app.R
 import com.example.macdonalds_app.adapters.ItemCartAdapter
-import com.example.macdonalds_app.adapters.ProductAdapter
-import com.example.macdonalds_app.providers.HambuguerProvider
+import com.example.macdonalds_app.providers.ProductProvider
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -46,8 +45,7 @@ class CartFragment : Fragment() {
         // Inflate the layout for this fragment
         recyclerView = view.findViewById(R.id.cart_list_view)
         recyclerView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false) //Set Layaout Manager as Vertical
-        recyclerView.adapter = ItemCartAdapter(HambuguerProvider.hambuguerList)
-
+        recyclerView.adapter = ItemCartAdapter(ProductProvider.hambuguerList)
 
         return view
 

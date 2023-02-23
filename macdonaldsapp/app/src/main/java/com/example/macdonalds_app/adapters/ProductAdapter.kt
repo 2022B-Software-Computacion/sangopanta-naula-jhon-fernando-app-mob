@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.macdonalds_app.R
 import com.example.macdonalds_app.entities.Hamburguer
-import com.example.macdonalds_app.providers.HambuguerProvider
 
 
 class ProductAdapter(private val hamburguerList:List<Hamburguer>): RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
