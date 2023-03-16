@@ -58,7 +58,7 @@ class IFirebaseUIAuth : AppCompatActivity() {
         btnLogin.visibility = View.VISIBLE
         btnLogOut.visibility = View.VISIBLE
 
-        if(res.isNewUser == true){
+        if(res.isNewUser){
             registrarUsuarioPorPrimeraVez(res)
         }
     }
