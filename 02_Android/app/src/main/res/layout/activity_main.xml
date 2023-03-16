@@ -22,7 +22,6 @@
         android:id="@+id/Implicito"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
         android:text="Implicito"
         app:layout_constraintEnd_toEndOf="@+id/Explicito"
         app:layout_constraintHorizontal_bias="1.0"
@@ -49,17 +48,17 @@
         android:text="List view"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.378"
+        app:layout_constraintHorizontal_bias="0.401"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.131"
+        app:layout_constraintVertical_bias="0.084"
         tools:ignore="UnknownId" />
 
     <Button
         android:id="@+id/btn_ir_dbb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="20dp"
         android:text="Ir A BDD"
         app:layout_constraintEnd_toEndOf="@+id/button"
         app:layout_constraintHorizontal_bias="0.3"
@@ -70,7 +69,7 @@
         android:id="@+id/btn_recycler_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="4dp"
         android:text="R_view"
         app:layout_constraintEnd_toEndOf="@+id/btn_ir_dbb"
         app:layout_constraintHorizontal_bias="1.0"
@@ -93,8 +92,23 @@
         android:layout_height="wrap_content"
         android:text="Firebase"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btn_recycler_view"
-        app:layout_constraintStart_toStartOf="@+id/btn_recycler_view"
-        app:layout_constraintTop_toBottomOf="@+id/btn_recycler_view" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_recycler_view"
+        app:layout_constraintVertical_bias="0.06" />
+
+    <Button
+        android:id="@+id/btn_intent_firestore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:text="Firestore"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_intent_firebase"
+        app:layout_constraintVertical_bias="0.022" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

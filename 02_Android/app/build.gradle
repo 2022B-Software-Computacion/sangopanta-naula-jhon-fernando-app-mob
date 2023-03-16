@@ -7,13 +7,13 @@ plugins {
 
 android {
     namespace 'com.example.a02_android'
-    compileSdk 32
-
+    compileSdk 33
+    buildToolsVersion "30.0.0"
 
     defaultConfig {
         applicationId "com.example.a02_android"
         minSdk 24
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -44,6 +44,7 @@ dependencies {
         *   Libraries of Firebase
         *   :params: 21.1.0
      */
+    implementation platform('com.google.firebase:firebase-bom:31.2.3')
 
     //Library de Authentication
     implementation 'com.google.firebase:firebase-auth:21.1.0'
@@ -51,8 +52,8 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
     // Firestore
     implementation 'com.google.firebase:firebase-firestore-ktx'
-    implementation platform('com.google.firebase:firebase-bom:31.2.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
+
 
     implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
