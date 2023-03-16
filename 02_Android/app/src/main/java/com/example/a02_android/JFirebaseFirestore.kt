@@ -11,13 +11,14 @@ import com.google.firebase.firestore.QueryDocumentSnapshot
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import java.util.Date
+import java.util.*
+import kotlin.collections.ArrayList
+
 
 class JFirebaseFirestore : AppCompatActivity() {
 
     var query: Query? = null
     val arreglo: ArrayList<JCitiesDTO> = arrayListOf()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_jfirebase_firestore)
@@ -111,7 +112,7 @@ class JFirebaseFirestore : AppCompatActivity() {
                     adaptador.notifyDataSetChanged()
                 }
                 .addOnFailureListener {
-                // Si algo salio mal
+                    // Si algo salio mal
                 }
         }
     }
@@ -155,7 +156,7 @@ class JFirebaseFirestore : AppCompatActivity() {
         val referenciaEjemploEstudiante = db
             .collection("ejemplo")
             .document("1234567")
-            .collection("Estudiante")
+            .collection("estudiante")
 
         val identificador = Date().time
         val datosEstudiante = hashMapOf(
@@ -171,7 +172,7 @@ class JFirebaseFirestore : AppCompatActivity() {
 
         /* Con identificador quemado*/
         referenciaEjemploEstudiante
-            .document("123456789")
+            .document("1234567")
             .set(datosEstudiante) // Actualiza o crea
             .addOnCompleteListener { /* Si todo salio bien*/ }
             .addOnFailureListener { /* Si algo salio mal*/ }
@@ -222,7 +223,8 @@ class JFirebaseFirestore : AppCompatActivity() {
             .document("BJ")
             .get()
             .addOnSuccessListener {
-                // it.id => BJ // Obtenemos el id de firestore
+                it.id  // BJ // Obtenemos el id de firestore
+                limpiarArreglo()
                 arreglo.add(
                     JCitiesDTO(
                         it.data?.get("name") as String?,
@@ -230,28 +232,30 @@ class JFirebaseFirestore : AppCompatActivity() {
                         it.data?.get("country") as String?,
                         it.data?.get("capital") as Boolean?,
                         it.data?.get("population") as Long?,
-                        it.data?.get("regions") as List<String>?
+                        it.data?.get("regions") as ArrayList<String>?
                     )
                 )
+                adaptador.notifyDataSetChanged()
             }
     }
 
     fun consultarConOrderBy(
-        adapter: ArrayAdapter<JCitiesDTO>
+        adaptador: ArrayAdapter<JCitiesDTO>
     ) {
         val db = Firebase.firestore // Objeto del firestore
         val citiesRefUnico = db
             .collection("cities") // Nombre de la coleccion
         limpiarArreglo()
-        adapter.notifyDataSetChanged()
+        adaptador.notifyDataSetChanged()
         citiesRefUnico
             // No usamos con document porque en document nos devuelve uno solo
             // cities => "Population" ASCENDING
-            .orderBy("population", com.google.firebase.firestore.Query.Direction.ASCENDING)
+            .orderBy("population", Query.Direction.ASCENDING)
             .get() // Obtenemos la petición
-            .addOnSuccessListener { result ->
-                for (ciudad in result) {
-                    añadirArregloCiudad(arreglo, ciudad, adapter)
+            .addOnSuccessListener {
+                for (ciudad in it) {
+                    ciudad.id
+                    añadirArregloCiudad(arreglo, ciudad, adaptador)
                 }
             }
     }
@@ -328,15 +332,18 @@ class JFirebaseFirestore : AppCompatActivity() {
         ciudad: QueryDocumentSnapshot,
         adaptador: ArrayAdapter<JCitiesDTO>
     ) {
+        ciudad.id // Obtenemos el id de firestore
         val nuevaCiudad = JCitiesDTO(
-            ciudad.data.get("name") as String,
-            ciudad.data.get("state") as String,
-            ciudad.data.get("country") as String,
-            ciudad.data.get("capital") as Boolean,
-            ciudad.data.get("population") as Long,
-            ciudad.data.get("regions") as List<String>
+        ciudad.data.get("name") as String?,
+        ciudad.data.get("state") as String?,
+        ciudad.data.get("country") as String?,
+        ciudad.data.get("capital") as Boolean?,
+        ciudad.data.get("population") as Long?,
+        ciudad.data.get("regions") as ArrayList<String>
         )
-        arregloNuevo.add(nuevaCiudad)
+        arregloNuevo.add(
+            nuevaCiudad
+        )
         adaptador.notifyDataSetChanged()
     }
 }

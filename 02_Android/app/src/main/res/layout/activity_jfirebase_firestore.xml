@@ -16,8 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-
     <Button
         android:id="@+id/btn_fs_order_by"
         android:layout_width="wrap_content"
@@ -29,8 +27,6 @@
         app:layout_constraintTop_toTopOf="@+id/btn_fs_datos_prueba"
         app:layout_constraintVertical_bias="1.0" />
 
-
-
     <Button
         android:id="@+id/btn_fs_odoc"
         android:layout_width="wrap_content"
@@ -40,8 +36,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/btn_fs_order_by"
         app:layout_constraintStart_toEndOf="@+id/btn_fs_order_by"
         app:layout_constraintTop_toTopOf="@+id/btn_fs_order_by" />
-
-
 
     <Button
         android:id="@+id/btn_fs_ind_comp"
@@ -54,8 +48,6 @@
         app:layout_constraintStart_toStartOf="@+id/btn_fs_datos_prueba"
         app:layout_constraintTop_toBottomOf="@+id/btn_fs_datos_prueba" />
 
-
-
     <Button
         android:id="@+id/btn_fs_crear"
         android:layout_width="wrap_content"
@@ -67,8 +59,6 @@
         app:layout_constraintTop_toTopOf="@+id/btn_fs_ind_comp"
         app:layout_constraintVertical_bias="0.0" />
 
-
-
     <ListView
         android:id="@+id/lv_firestore"
         android:layout_width="228dp"
@@ -78,8 +68,6 @@
         app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="@+id/btn_fs_datos_prueba"
         app:layout_constraintTop_toBottomOf="@+id/btn_fs_order_by" />
-
-
 
     <Button
         android:id="@+id/btn_fs_eliminar"
@@ -92,8 +80,6 @@
         app:layout_constraintTop_toTopOf="@+id/btn_fs_crear"
         app:layout_constraintVertical_bias="0.0" />
 
-
-
     <Button
         android:id="@+id/btn_fs_epaginar"
         android:layout_width="wrap_content"
@@ -103,8 +89,6 @@
         app:layout_constraintEnd_toEndOf="@+id/btn_fs_ind_comp"
         app:layout_constraintStart_toStartOf="@+id/btn_fs_ind_comp"
         app:layout_constraintTop_toBottomOf="@+id/btn_fs_ind_comp" />
-
-
 
     <Button
         android:id="@+id/btn_fs_paginar"
@@ -117,5 +101,6 @@
         app:layout_constraintStart_toEndOf="@+id/btn_fs_epaginar"
         app:layout_constraintTop_toTopOf="@+id/btn_fs_epaginar"
         app:layout_constraintVertical_bias="0.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,6 @@
 package com.example.a02_android
 
-data class JCitiesDTO(
+class JCitiesDTO(
     public var name: String?,
     public var state: String?,
     public var country: String?,
@@ -10,6 +10,6 @@ data class JCitiesDTO(
 ) {
 
     override fun toString(): String{
-        return "$name - $country"
+        return "${name} - ${country}"
     }
 }
