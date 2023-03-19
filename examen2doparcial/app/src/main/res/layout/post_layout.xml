@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="@drawable/custom_background"
+    android:elevation="16dp"
+    android:layout_marginTop="16dp"
+    >
+
+    <LinearLayout
+        android:id="@+id/infoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Titulo"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <TextView
+            android:id="@+id/textViewDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <TextView
+            android:id="@+id/textViewDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <TextView
+            android:id="@+id/textViewCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Categoria"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        <TextView
+            android:id="@+id/textViewId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ID"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    </LinearLayout>
+
+    <!-- Options delete update -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/infoLayout"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_actualizar_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Actualizar" />
+
+        <Button
+            android:id="@+id/btn_eliminar_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:padding="8dp"
+            android:text="Eliminar" />
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
